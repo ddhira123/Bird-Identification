@@ -1,0 +1,72 @@
+body {
+    touch-action: none; /*https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action*/
+    font-family: "Roboto";
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+button {
+    background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    background-color: #79bbff;
+    border-radius: 20px;
+    border: 1px solid #84bbf3;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 11px 32px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+button:hover {
+    background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+    background-color: #378de5;
+}
+button:active {
+    position: relative;
+    top: 1px;
+}
+h1 {
+    margin: 30px;
+    font-size: 32px;
+    text-align: center;
+}
+input[type="file"] {
+    display: none;
+}
+label {
+    text-align: center;
+}
+.result-item {
+    text-align: center;
+    border-right: 0.001rem solid #000;
+    border-left: 0.001rem solid #000;
+}
+.two-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+#canvas {
+    border: 1px solid red;
+}
+#paint {
+    margin: 20px auto;
+    text-align: center;
+    align-items: center;
+}
+#predicted {
+    margin-top: 80px;
+    text-align: center;
+}
+#results {
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
