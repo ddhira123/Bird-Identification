@@ -30,7 +30,7 @@ async function predict() {
 	document.getElementById("results").innerHTML = templateResultLoading;
 	let image = document.getElementById("uploaded-img");
 	if (image.src != "") {
-		let predictions = await window.model
+		let predictions = await model
 			.predict(preprocessImage(image))
 			.data();
 		let results = Array.from(predictions)
