@@ -8,6 +8,11 @@ const templateResult = (bird) => `
 		</div>
 	`;
 
+const templateResultLoading = `
+	<div></div>
+	<div class="loader" id="result-loading"></div>
+	<div></div>`;
+
 function displayResult(result) {
 	var inner = "";
 	result.forEach((bird) => {
@@ -22,11 +27,12 @@ async function loadModel() {
 }
 
 async function predict() {
+	document.getElementById("results").innerHTML = templateResultLoading;
 	let image = document.getElementById("uploaded-img");
-	if (image.src != "./assets/empty.jpg") {
+	if (image.src != "") {
 		let predictions = await window.model
 			.predict(preprocessImage(image))
-			.dataSync();
+			.data();
 		let results = Array.from(predictions)
 			.map(function (p, i) {
 				return {
@@ -38,7 +44,10 @@ async function predict() {
 				return b.probability - a.probability;
 			})
 			.slice(0, 3);
-		displayResult(results);
+		setTimeout(() => {
+			document.getElementById("results").innerHTML = "";
+			displayResult(results);
+		}, 3000);
 	}
 }
 

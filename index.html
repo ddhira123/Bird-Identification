@@ -8,35 +8,37 @@
 		/>
 		<meta name="author" content="Dhana Dhira" />
 		<link rel="stylesheet" href="styles.css" />
-		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
 		<script src="./js/birds_species_dict.js"></script>
 		<script src="./js/prediction.js"></script>
 	</head>
 	<body>
-		<h1>Sistem Identifikasi Burung yang dilindungi</h1>
-		<div id="paint">
-			<div id="canvas">
-				<div id="no-image">
-					Klik pada Tombol <b>Pilih Gambar</b>, <br />
-					lalu klik tombol <b>Identifikasi</b> <br />
-					untuk melakukan identifikasi.
+		<div class="loading-indicator"><div class="loader"></div></div>
+		<main>
+			<h1>Sistem Identifikasi Burung yang dilindungi</h1>
+			<div id="paint">
+				<div id="canvas">
+					<div id="no-image">
+						Klik pada Tombol <b>Pilih Gambar</b>, <br />
+						lalu klik tombol <b>Identifikasi</b> <br />
+						untuk melakukan identifikasi.
+					</div>
+					<img id="uploaded-img" src="" alt="uploaded image" />
 				</div>
-				<img id="uploaded-img" src="" />
 			</div>
-		</div>
-		<div class="two-buttons">
-			<button id="btn-upload">
-				<label class="file-upload" for="img-file-input">Pilih Gambar</label>
-			</button>
-			<input type="file" id="img-file-input" accept="image/*" />
-			<button id="btn-predict" onclick="predict()">Identifikasi</button>
-		</div>
-		<h1>Hasil Identifikasi</h1>
-		<div id="predicted">
-			<div id="results"></div>
-			<button id="clear">Bersihkan</button>
-		</div>
+			<div class="two-buttons">
+				<button id="btn-upload">
+					<label class="file-upload" for="img-file-input">Pilih Gambar</label>
+				</button>
+				<input type="file" id="img-file-input" accept="image/*" />
+				<button id="btn-predict" onclick="predict()">Identifikasi</button>
+			</div>
+			<h1>Hasil Identifikasi</h1>
+			<div id="predicted">
+				<div id="results"></div>
+				<button id="clear">Bersihkan</button>
+			</div>
+		</main>
 
 		<script src="./js/index.js"></script>
 	</body>
