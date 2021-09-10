@@ -2,7 +2,7 @@ function clearImages() {
 	var noImg = document.getElementById("no-image");
 	var img = document.getElementById("uploaded-img");
 	document.querySelector("#results").innerHTML = '';
-	noImg.style.display = "block";
+	noImg.style.display = "table-cell";
 	img.style.display = "none";
 }
 
