@@ -3,7 +3,7 @@ const templateResult = (bird) => `
 			<img src="./assets/${bird.className}.jpg"><br>
 			<b>${bird.className}</b><br>
 			<span>(<i>${birds[bird.className].latinName}</i>)</span><br>
-			<span>Akurasi: ${` ${parseInt(bird.probability * 100, 10)}%`}</span><br>
+			<span>Akurasi: ${Math.round(bird.probability) * 100}% </span><br>
 			<a href="${birds[bird.className].linkToDesc}">Klik untuk lihat deskripsi</a>
 		</div>
 	`;
@@ -33,6 +33,7 @@ async function predict() {
 		let predictions = await model
 			.predict(preprocessImage(image))
 			.data();
+			
 		let results = Array.from(predictions)
 			.map(function (p, i) {
 				return {
